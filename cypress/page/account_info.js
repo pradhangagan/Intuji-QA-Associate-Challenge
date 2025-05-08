@@ -1,4 +1,4 @@
-// cypress/support/pageObjects/AccountInfoPage.js
+// provide account information for the user registration
 export default class AccountInfoPage {
   elements = {
     titleMr: () => cy.get("#id_gender1"),

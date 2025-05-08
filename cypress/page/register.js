@@ -1,4 +1,5 @@
-export default class LoginPage {
+//command to signup new user
+export default class SignupPage {
   visit() {
     cy.visit("/login");
   }

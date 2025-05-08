@@ -1,36 +1,14 @@
-// import { faker } from "@faker-js/faker";
-// import LoginPage from "../support/register";
-
-// describe("Signup with fakerJs data", () => {
-//   it("successfully sign in with dynamically generated data and verifies logout", () => {
-//     const fullName = faker.person.fullName();
-//     const email = faker.internet.email();
-
-//     const loginPage = new LoginPage();
-//     loginPage.visit();
-//     loginPage.fillUsername(fullName);
-//     loginPage.fillEmail(email);
-//     loginPage.submit();
-
-//     cy.url().should("include", "/");
-//     cy.get(".clearfix");
-//   });
-// });
-
-// cypress/e2e/register.cy.js
+//Sign up using faker.js  for registration
 import { faker } from "@faker-js/faker";
-import LoginPage from "../support/register";
-import AccountInfoPage from "../support/account_info";
+import AccountInfoPage from "../page/account_info";
+import SignupPage from "../page/register";
 
-describe("Complete Registration Flow", () => {
+describe("Complete Initial Registration Flow", () => {
   it("successfully registers user with all details", () => {
-    // Generate test data
     // Generate FIRST/LAST names FIRST
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
     const userData = {
-      // firstName: faker.person.firstName(),
-      // lastName: faker.person.lastName(),
       fullName: `${firstName} ${lastName}`,
       email: faker.internet.email(),
       password: faker.internet.password(),
@@ -49,9 +27,7 @@ describe("Complete Registration Flow", () => {
       mobile: faker.phone.number(),
     };
 
-    // const fullName = `${userData.firstName} ${userData.lastName}`;
-
-    const loginPage = new LoginPage();
+    const loginPage = new SignupPage();
     const accountPage = new AccountInfoPage();
 
     // Initial registration
@@ -89,5 +65,17 @@ describe("Complete Registration Flow", () => {
     cy.getCookies().then((cookies) => {
       cy.writeFile("cypress/fixtures/sessionCookies.json", cookies);
     });
+  });
+});
+
+//restore session and set cookies for further tests
+describe("Restoring Session", () => {
+  beforeEach(() => {
+    cy.restoreSession();
+  });
+
+  it("should verify the user is still logged in after restoring session", () => {
+    cy.visit("/");
+    cy.get(":nth-child(10) > a").should("contain", "Logged in as");
   });
 });

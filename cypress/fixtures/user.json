@@ -1,0 +1,19 @@
+{
+  "name": "John Doe",
+  "email": "john.doe11@example.com",
+  "title": "Mr",
+  "password": "E3sds$dff23",
+  "day": 25,
+  "month": "December",
+  "year": 1990,
+  "firstname": "John",
+  "lastname": "Doe",
+  "company": "Tech Solutions Inc.",
+  "address": "1234 Elm Street",
+  "address2": "Apt 567",
+  "country": "United States",
+  "city": "Springfield",
+  "state": "California",
+  "zipcode": "90210",
+  "mobile_number": "1234567890"
+}
