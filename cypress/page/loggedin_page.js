@@ -12,6 +12,4 @@ export const loginUser = () => {
     cy.url().should("not.include", "/login");
     cy.get("body").should("not.contain", "Login");
   });
-
-  cy.visit("/");
 };
