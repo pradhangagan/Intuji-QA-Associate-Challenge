@@ -1,4 +1,4 @@
-import { loginUser } from "../page/loggedin_page";
+import { loginUser } from "../page/login";
 
 // Import the login function from loggedin_page.js
 

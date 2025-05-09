@@ -1,5 +1,5 @@
 import ProductsPage from "../page/product";
-import { loginUser } from "../page/loggedin_page";
+import { loginUser } from "../page/login";
 
 describe("Product Browsing & Filtering Test", () => {
   before(() => {

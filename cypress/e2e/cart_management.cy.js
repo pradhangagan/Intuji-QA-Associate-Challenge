@@ -1,4 +1,4 @@
-import { loginUser } from "../page/loggedin_page";
+import { loginUser } from "../page/login";
 import ProductsPage from "../page/product";
 import CartPage from "../page/cart";
 

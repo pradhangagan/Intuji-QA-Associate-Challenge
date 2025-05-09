@@ -1,7 +1,7 @@
 //Sign up using faker.js  for registration
 import { faker } from "@faker-js/faker";
 import AccountInfoPage from "../page/account_info";
-import SignupPage from "../page/register";
+import SignupPage from "../page/signin";
 
 describe("Complete Initial Registration Flow", () => {
   it("successfully registers user with all details", () => {
